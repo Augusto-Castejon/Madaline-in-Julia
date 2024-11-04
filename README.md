@@ -49,4 +49,6 @@ O código implementa uma rede neural Madaline com as seguintes funcionalidades:
 ## Contribuição
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
 
-Mencionando @julia pela exelente linguagem
+Mencionando @JuliaLang pela exelente linguagem
+
+https://github.com/JuliaLang/julia

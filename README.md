@@ -51,4 +51,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull r
 
 Mencionando @JuliaLang pela exelente linguagem
 
-https://github.com/JuliaLang/julia
+Acesse https://github.com/JuliaLang/julia para saber mais sobre a linguagem!

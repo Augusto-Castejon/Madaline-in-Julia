@@ -37,8 +37,7 @@ O código implementa uma rede neural Madaline com as seguintes funcionalidades:
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu_usuario/seu_repositorio.git
-   cd seu_repositorio
+   git clone [https://github.com/seu_usuario/seu_repositorio.git](https://github.com/Augusto-Castejon/Madaline-in-Julia.git)
    
 2. Abra o projeto no Visual Studio Code.
 

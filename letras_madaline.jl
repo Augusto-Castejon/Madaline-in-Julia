@@ -130,15 +130,15 @@ end
 # Função principal
 function main()
     input_size = 25  # 5x5 pixels
-    hidden_size = 10  # neurônios na camada oculta
+    hidden_size = 100  # neurônios na camada oculta
     output_size = 5  # Saídas correspondentes a A, B, C, D, E
 
     # Cria dados de letras
     X_train, Y_train, X_test, Y_test = criar_dados_letras()
     
     # Parâmetros do treinamento
-    taxa_aprendizado = 0.01
-    epochs = 150
+    taxa_aprendizado = 0.001
+    epochs = 10000
 
     println("Início do treinamento...")
     W_hidden, W_output = treinar(X_train, Y_train, hidden_size, epochs, taxa_aprendizado)

@@ -128,13 +128,13 @@ function criar_dados_letras()
 end
 
 # Função para calcular OBV
-function calcular_OBV(precos, volumes)
-    n = length(precos)
+function calcular_OBV(valores, volumes)
+    n = length(valores)
     obv = zeros(n)
     for i in 2:n
-        if precos[i] > precos[i-1]
+        if valores[i] > valores[i-1]
             obv[i] = obv[i-1] + volumes[i]
-        elseif precos[i] < precos[i-1]
+        elseif valores[i] < valores[i-1]
             obv[i] = obv[i-1] - volumes[i]
         else
             obv[i] = obv[i-1]
@@ -144,8 +144,8 @@ function calcular_OBV(precos, volumes)
 end
 
 # Função para adicionar OBV aos dados de entrada
-function adicionar_OBV(X, precos, volumes)
-    obv = calcular_OBV(precos, volumes)
+function adicionar_OBV(X, valores, volumes)
+    obv = calcular_OBV(valores, volumes)
     obv = obv[1:size(X, 1)]  # Garante que o OBV tenha o mesmo tamanho das amostras
     X_com_OBV = hcat(X, obv)  # Adiciona o OBV como uma nova coluna
     return X_com_OBV
@@ -157,19 +157,18 @@ function main()
     hidden_size = 100  # Neurônios na camada oculta
     output_size = 5  # Saídas correspondentes a A, B, C, D, E
 
-    # Dados fictícios de preços e volumes (substitua pelos reais)
-    precos = [10, 12, 11, 13, 14, 13, 15, 16, 17, 16]  # Exemplo
+    valores = [10, 12, 11, 13, 14, 13, 15, 16, 17, 16]  # Exemplo
     volumes = [1000, 1200, 1100, 1300, 1400, 1350, 1500, 1600, 1700, 1650]
 
     # Cria dados de treinamento e teste
     X_train, Y_train, X_test, Y_test = criar_dados_letras()
 
     # Calcula OBV
-    obv = calcular_OBV(precos, volumes)
+    obv = calcular_OBV(valores, volumes)
 
     # Adiciona OBV aos dados
-    X_train = adicionar_OBV(X_train, precos, volumes)
-    X_test = adicionar_OBV(X_test, precos, volumes)
+    X_train = adicionar_OBV(X_train, valores, volumes)
+    X_test = adicionar_OBV(X_test, valores, volumes)
 
     # Parâmetros do treinamento
     taxa_aprendizado = 0.001
